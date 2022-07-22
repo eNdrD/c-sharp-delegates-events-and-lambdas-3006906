@@ -32,12 +32,14 @@ namespace Composable
             Console.WriteLine("Calling the second delegate");
             f2(a, b);
             // TODO: Call the composed delegate
+            MyDelegate allDelegates = f1 + f2;
             Console.WriteLine("\nCalling the chained delegates");
-
+            allDelegates(a, b);
 
             // TODO: subtract off one of the delegates
+            allDelegates -= f1;
             Console.WriteLine("\nCalling the unchained delegates");
-
+            allDelegates(b, b);
         }
     }
 }
